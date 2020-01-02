@@ -35,6 +35,11 @@
 
 #include <regex.h>
 
+int sqlite3_key(
+  struct sqlite3 *db,                   /* Database to be rekeyed */
+  const void *pKey, int nKey     /* The key */
+);
+
 static void sqlite_regexp(sqlite3_context* context, int argc, sqlite3_value** values) {
   if ( argc < 2 ) {
     sqlite3_result_error(context, "SQL function regexp() called with missing arguments.", -1);
